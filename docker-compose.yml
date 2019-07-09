@@ -1,12 +1,15 @@
 version: "3"
 services:
-  nginx: 
-    image: nginx:latest
-    container_name: http_rev_proxy
+  web:
+    image: nginx:stable
     volumes:
-      # - /opt/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./conf.d:/etc/nginx/conf.d
-      # - /opt/www:/opt/www
+      - ./opt/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./opt/nginx/conf.d:/etc/nginx/conf.d
+      # - ./opt/www:/opt/www
     ports:
-      - 80:80
-      # - 443:443
+      - "80:80"
+      # - "443:443"
+    networks:
+      - proxy_webnet
+networks:
+   proxy_webnet:
