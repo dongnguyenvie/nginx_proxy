@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="hola">
+      <p>Hello. we are CyberSkill</p>
+      <p></p>
+    </div>
+    <style>
+      .box {
+        width: 120px;
+        height: 60px;
+        float: left;
+        background: rgba(30, 30, 30, 30.8);
+        margin-left: 1px;
+        margin-bottom: 1px;
+        transition: All 0.7s ease;
+        -webkit-transition: All 0.7s ease;
+        -moz-transition: All 0.7s ease;
+        -o-transition: All 0.7s ease;
+        transform: rotate(0deg) scale(1) skew(1deg) translate(5px);
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(5px);
+        -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(5px);
+        -o-transform: rotate(0deg) scale(1) skew(1deg) translate(5px);
+        -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(5px);
+      }
+      .box:hover {
+        transform: rotate(1deg) scale(0.88) skew(0deg) translate(0px);
+        -webkit-transform: rotate(1deg) scale(0.88) skew(0deg) translate(0px);
+        -moz-transform: rotate(1deg) scale(0.88) skew(0deg) translate(0px);
+        -o-transform: rotate(1deg) scale(0.88) skew(0deg) translate(0px);
+        -ms-transform: rotate(1deg) scale(0.88) skew(0deg) translate(0px);
+      }
+      .box p {
+        color: white;
+        font-size: 5px;
+        text-align: center;
+      }
+      #hola {
+        margin: 70px 140px;
+        width: 250px;
+
+        height: 125px;
+        position: fixed;
+        background: white;
+        z-index: 9000;
+        box-shadow: 1px 2px 10px;
+        transition: All 1s ease;
+        -webkit-transition: All 1s ease;
+        -moz-transition: All 1s ease;
+        -o-transition: All 1s ease;
+        transform: rotate(2deg) scale(1) skew(1deg) translate(10px);
+        -webkit-transform: rotate(2deg) scale(1) skew(1deg) translate(10px);
+        -moz-transform: rotate(2deg) scale(1) skew(1deg) translate(10px);
+        -o-transform: rotate(2deg) scale(1) skew(1deg) translate(10px);
+        -ms-transform: rotate(2deg) scale(1) skew(1deg) translate(10px);
+      }
+      #hola:hover {
+        transform: rotate(0deg) scale(1.6) skew(1deg) translate(0px);
+        -webkit-transform: rotate(0deg) scale(1.6) skew(1deg) translate(0px);
+        -moz-transform: rotate(0deg) scale(1.6) skew(1deg) translate(0px);
+        -o-transform: rotate(0deg) scale(1.6) skew(1deg) translate(0px);
+        -ms-transform: rotate(0deg) scale(1.6) skew(1deg) translate(0px);
+        background: black;
+        color: white;
+      }
+      #hola p {
+        text-align: right;
+        padding-right: 10px;
+        font-family: Iceland;
+        font-size: 25px;
+      }
+      #17 {
+        background-color: white;
+      }
+    </style>
+    <script>
+      //while para crear la grilla
+      var myCounter = 0;
+      var elements,
+        i = 0;
+
+      while (myCounter < 250) {
+        //document.write("myCounter = " + myCounter);
+        //document.write(inebreak);
+
+        var caja = document.createElement("div");
+
+        var j = myCounter + 1;
+        //caja.innerHTML = '<p>'+j+'</p>';
+        caja.setAttribute("id", myCounter);
+        caja.setAttribute("class", "box");
+        //caja.innerHTML= "<p>"+j+"</p>";
+        caja.addEventListener("mouseover", func, false);
+        caja.addEventListener("mouseout", func1, false);
+        document.body.appendChild(caja);
+        myCounter++;
+        function func(ev) {
+          var color = ["lightblue", "lightcoral", "lightcyan"];
+          var _otherL = color[Math.floor(Math.random() * color.length)];
+          this.setAttribute("style", "background-color:" + _otherL + ";");
+        }
+
+        function func1(ev) {
+          var color = [
+            "lightgreen",
+            "lightblue",
+            "lightyellow",
+            "lightcyan",
+            "lightcoral"
+          ];
+          var _otherL = color[Math.floor(Math.random() * color.length)];
+          this.setAttribute("style", "background-color:" + _otherL + ";");
+        }
+      }
+
+      //--- google font
+      WebFontConfig = {
+        google: { families: ["Iceland::latin"] }
+      };
+      (function() {
+        var wf = document.createElement("script");
+        wf.src =
+          ("https:" == document.location.protocol ? "https" : "http") +
+          "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+        wf.type = "text/javascript";
+        wf.async = "true";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+  </body>
+</html>
